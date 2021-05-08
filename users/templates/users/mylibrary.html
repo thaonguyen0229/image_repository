@@ -1,0 +1,26 @@
+{% extends "library/base.html" %}
+{% block content %}
+    <h2>{{ user.username}}'s Library</h2>
+    <p><a class="btn" href="{% url 'post_create' %}">Upload Image</a></p>
+    {% for post in posts %}
+        <div class="site-container">
+            <div class="article-container">
+                <a href="{% url 'post_detail' post.id %}">
+                    <article class="article-card">
+                        <figure class="article-image">
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}" width="300">
+                        </figure>
+                        <div class="article-content">
+                            <h3 class="post-title">{{ post.title }}</h3>
+                            {% if post.public %}
+                                <p>Public</p>
+                            {% else %}
+                                <p>Private</p>
+                            {% endif %}
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
