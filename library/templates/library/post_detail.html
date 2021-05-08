@@ -1,0 +1,30 @@
+{% extends "library/base.html" %}
+{% block content %}
+    <p>
+        {% if object.owner == user %}
+            <a class="btn" href="{% url 'post_update' object.id %}">Update</a>
+            <a class="btn" href="{% url 'post_delete' object.id %}">Delete</a>
+        {% endif %}
+    </p>
+    <div class="site-container">
+        <div class="article-container">
+            <article class="article-card">
+                <figure class="article-image">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" width="300">
+                </figure>
+                <div class="article-content">
+                    <h3 class="post-title">{{ post.title }}</h3>
+                    {% if post.owner == user %}
+                        {% if post.public %}
+                            <p>Public</p>
+                        {% else %}
+                            <p>Private</p>
+                        {% endif %}
+                    {% else %}
+                        <p>Posted by {{ post.owner }}</p>
+                    {% endif %}
+                </div>
+            </article>
+        </div>
+    </div>
+{% endblock %}

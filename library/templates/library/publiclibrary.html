@@ -1,0 +1,29 @@
+{% extends "library/base.html" %}
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+   <p><a class="btn" href="{% url 'post_create' %}">Upload Image</a></p>
+    {% for post in posts %}
+        <div class="site-container">
+            <div class="article-container">
+                <a href="{% url 'post_detail' post.id %}">
+                    <article class="article-card">
+                        <figure class="article-image">
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}" width="300">
+                        </figure>
+                        <div class="article-content">
+                            <h3 class="post-title">{{ post.title }}</h3>
+                            <p class="post-owner">Posted by {{ post.owner }}</p>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

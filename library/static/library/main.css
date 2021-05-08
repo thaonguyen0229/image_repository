@@ -1,0 +1,146 @@
+/*@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');*/
+
+body {
+    /*font-family: 'PT Sans', sans-serif;*/
+    font-size: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #f0f4fb;
+    /*-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;*/
+}
+
+header {
+    background: #77c3ec;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+}
+.btn {
+    font-family: sans-serif;
+    display: inline-block;
+    border: none;
+    padding: 10px 16px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #22447b;
+}
+
+.btn a {
+    color: #fff;
+}
+.btn:hover {
+    background-color: #2c3e4c;
+}
+.nav-bar {
+    width: 80%;
+    margin: 0 auto;
+}
+.nav-bar h1 {
+    float: left;
+    font-size: 30px;
+}
+.nav-bar nav {
+    float: right;
+}
+
+.nav-bar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.nav-bar li {
+    display: inline-block;
+    margin-left: 35px;
+    padding-top: 25px;
+    font-size: 20px;
+
+    position: relative;
+}
+
+.nav-bar li a:hover {
+    color: #000
+}
+
+.nav-bar li a:before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #444;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+}
+
+.nav-bar li a:hover:before {
+    width: 100%;
+}
+
+.nav-bar a {
+    color: #444;
+}
+
+
+.site-container {
+    margin: 2rem auto;
+    max-width: calc(100% - 80px);
+    display: inline-block;
+}
+
+.article-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    gap: 2rem;
+}
+
+.article-image {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.article-card {
+    background: white;
+    transition: 0.3s;
+}
+
+.article-card:hover {
+    box-shadow: 0 4px 20px 0 rgba(34,68,123,0.2);
+    cursor: pointer;
+}
+
+.article-content {
+    padding: 2rem;
+}
+
+.article-content p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #6b82a7;
+    margin: 0;
+}
+.article-content .post-title {
+    margin: 1rem 0;
+    color: #22447b;
+    text-transform: uppercase;
+}
+
+
+
+

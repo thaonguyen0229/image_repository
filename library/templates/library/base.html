@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'library/main.css' %}">
+        {% if title %}
+            <title>Image Repository - {{ title }}</title>
+        {% else %}
+            <title>Image Repository</title>
+        {% endif %}
+    </head>
+    <body>
+        <header>
+            <div class="nav-bar">
+                <h1><a href="{% url 'public_library' %}">ImageRepo</a></h1>
+                <nav>
+                    <ul>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'my_library' %}">My Library</a></li>
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        {% block content %}{% endblock %}
+    </body>
+</html>
