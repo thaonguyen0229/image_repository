@@ -10,3 +10,6 @@
     * cd image_repository
     * python manage.py runserver
 8. Open a browser, type website name: localhost:8000
+
+### A note:
+There is dummy data (images and users) which was used for testing
