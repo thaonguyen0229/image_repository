@@ -7,7 +7,7 @@
 4. Download this project as a zip
 5. Unzip the project
 7. Use terminal, go to the location where the project is located.
-    If the project name is "image_repository", type:\
+    If the project name is "image_repository", type:
     * cd image_repository
     * python manage.py runserver\
     \
